@@ -1,3 +1,4 @@
+import React, { Component, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -11,8 +12,8 @@ import {
   TouchableOpacity,
   FlatList,
   Alert,
+  Platform,
 } from "react-native";
-import React from "react";
 
 const Layout: any = {
   height: Dimensions.get("window").height,
@@ -26,92 +27,116 @@ const Colors: any = {
 
 const info: Array<any> = [
   {
-    id: "bio",
+    id: "Bio",
     title: "Bio",
   },
   {
-    id: "programming",
+    id: "Programming",
     title: "Languages",
   },
   {
-    id: "project",
+    id: "Project",
     title: "Projects",
   },
   {
     id: "Button4",
     title: "Button4",
   },
+  {
+    id: "Button5",
+    title: "Button5",
+  },
+  {
+    id: "Button6",
+    title: "Button6",
+  },
+  // {
+  //   id: "Button7",
+  //   title: "Button7",
+  // },
+  // {
+  //   id: "Button8",
+  //   title: "Button8",
+  // },
 ];
-export default function Mainpage(props) {
+
+export default function Mainpage({ navigation }) {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [cn, setcn] = useState();
+
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#D1E1D9" }}>
-      <ScrollView
-        contentContainerStyle={{
-          flexGrow: 1,
+    <SafeAreaView
+      style={[styles.AndroidSafeArea, { flex: 1, backgroundColor: "#D1E1D9" }]}
+    >
+      <View
+        style={{
+          flex: 0.3,
+          flexDirection: "row",
+          margin: 10,
+          borderRadius: 50,
+          backgroundColor: "#808080",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <View
-          style={{
-            flex: 0.3,
-            flexDirection: "row",
-            margin: 10,
-            borderRadius: 50,
-            backgroundColor: "#808080",
-            alignItems: "center",
+        <Image
+          style={styles.header}
+          source={require("../assets/header_logo.jpg")}
+        />
+        <Text>
+          Henry Juhyeong Kang {"\n"}Programming Name: PlayerOne{"\n"}React
+          Native Developer
+        </Text>
+      </View>
+
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: "#4B4B4B",
+          margin: 10,
+          borderRadius: 50,
+        }}
+      >
+        <FlatList
+          contentContainerStyle={{
+            flexGrow: 1,
             justifyContent: "center",
           }}
-        >
-          <Image
-            style={styles.header}
-            source={require("../assets/header_logo.jpg")}
-          />
-          <Text>
-            Henry Juhyeong Kang {"\n"}Programming Name: PlayerOne{"\n"}React
-            Native Developer
-          </Text>
-        </View>
-        <View
-          style={{
-            flex: 0.8,
-            backgroundColor: "#4B4B4B",
-            margin: 10,
-            borderRadius: 50,
-          }}
-        >
-          <FlatList
-            data={info}
-            numColumns={2}
-            renderItem={({ item }) => (
-              <TouchableOpacity
-                style={{
-                  flex: 1,
-                  margin: 30,
-                  borderRadius: 25,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                onPress={() => Alert.alert("Hi")}
-              >
-                <Image
-                  source={require("../assets/header_logo.jpg")}
-                  style={{ width: "100%", height: "100%", borderRadius: 25 }}
-                />
-                <Text>{item.title}</Text>
-              </TouchableOpacity>
-            )}
-          />
-        </View>
-        <View
-          style={{
-            flex: 0.15,
-            backgroundColor: "#c6c6c6",
-            margin: 10,
-            borderRadius: 50,
-          }}
-        >
-          <Text>Contact Information</Text>
-        </View>
-      </ScrollView>
+          data={info}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              style={{
+                flex: 1,
+                margin: 10,
+                borderRadius: 25,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              onPress={() => navigation.navigate(item.id)}
+              // onPress={() => Alert.alert(item.title)}
+            >
+              <Image
+                source={require("../assets/header_logo.jpg")}
+                style={{ width: 100, height: 100, borderRadius: 2000 }}
+              />
+              <Text>{item.title}</Text>
+            </TouchableOpacity>
+          )}
+          numColumns={3}
+          horizontal={false}
+          keyExtractor={(item) => item.id}
+        />
+      </View>
+      <View
+        style={{
+          flex: 0.15,
+          backgroundColor: "#c6c6c6",
+          margin: 10,
+          borderRadius: 50,
+        }}
+      >
+        <Text>Contact Information</Text>
+      </View>
     </SafeAreaView>
   );
 }
@@ -130,28 +155,35 @@ const styles = StyleSheet.create({
     borderRadius: 1000,
     margin: 10,
   },
+  AndroidSafeArea: {
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+  },
+  buttonClose: {
+    backgroundColor: "#2196F3",
+  },
 });
-
-{
-  /* <StatusBar
-  barStyle="dark-content"
-  hidden={false}
-  backgroundColor="#00BCD4"
-  translucent={true}
-/>; */
-}
-{
-  /* <Text style={{ margin: 20 }}>
-            Hello, my name is Henry Juhyeong kang {"\n"}I graduated BCIT in
-            2020.
-            {"\n"}
-          </Text> */
-}
-{
-  /* <TouchableOpacity style={{ flex: 0.5, margin: 20, borderRadius: 25 }}>
-  <Image
-    source={require("../assets/header_logo.jpg")}
-    style={{ width: "100%", height: "100%", borderRadius: 25 }}
-  />
-</TouchableOpacity>; */
-}
