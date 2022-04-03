@@ -13,90 +13,58 @@ import {
   FlatList,
   Alert,
   Platform,
+  Linking,
 } from "react-native";
-
+import Contactinfo from "./Contactinfo";
 const Layout: any = {
   height: Dimensions.get("window").height,
   width: Dimensions.get("window").width,
-};
-const Colors: any = {
-  theme: "#24685b",
-  white: "#fff",
-  greyish: "#a4a4a4",
 };
 
 const info: Array<any> = [
   {
     id: "Bio",
     title: "Bio",
+    image: require("../assets/Bio.png"),
   },
   {
-    id: "Programming",
-    title: "Languages",
+    id: "Skills",
+    title: "Skills",
+    image: require("../assets/Skills.png"),
   },
   {
-    id: "Project",
+    id: "Projects",
     title: "Projects",
+    image: require("../assets/Projects.png"),
   },
   {
-    id: "Button4",
-    title: "Button4",
+    id: "Experiences",
+    title: "Experiences",
+    image: require("../assets/Experiences.png"),
   },
   {
-    id: "Button5",
-    title: "Button5",
+    id: "Interests",
+    title: "Interests",
+    image: require("../assets/Interests.png"),
   },
-  {
-    id: "Button6",
-    title: "Button6",
-  },
-  // {
-  //   id: "Button7",
-  //   title: "Button7",
-  // },
-  // {
-  //   id: "Button8",
-  //   title: "Button8",
-  // },
 ];
 
 export default function Mainpage({ navigation }) {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [cn, setcn] = useState();
-
   return (
     <SafeAreaView
       style={[styles.AndroidSafeArea, { flex: 1, backgroundColor: "#D1E1D9" }]}
     >
-      <View
-        style={{
-          flex: 0.3,
-          flexDirection: "row",
-          margin: 10,
-          borderRadius: 50,
-          backgroundColor: "#808080",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <View style={styles.headerContainer}>
         <Image
-          style={styles.header}
+          style={styles.headerImage}
           source={require("../assets/header_logo.jpg")}
         />
         <Text>
-          Henry Juhyeong Kang {"\n"}Programming Name: PlayerOne{"\n"}React
-          Native Developer
+          Hi, {"\n\n"}I'm Henry, {"\n\n"}the Fun Developer.{" "}
         </Text>
       </View>
 
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "#4B4B4B",
-          margin: 10,
-          borderRadius: 50,
-        }}
-      >
+      <View style={styles.bodyContainer}>
         <FlatList
           contentContainerStyle={{
             flexGrow: 1,
@@ -105,18 +73,11 @@ export default function Mainpage({ navigation }) {
           data={info}
           renderItem={({ item }) => (
             <TouchableOpacity
-              style={{
-                flex: 1,
-                margin: 10,
-                borderRadius: 25,
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+              style={styles.bodyList}
               onPress={() => navigation.navigate(item.id)}
-              // onPress={() => Alert.alert(item.title)}
             >
               <Image
-                source={require("../assets/header_logo.jpg")}
+                source={item.image}
                 style={{ width: 100, height: 100, borderRadius: 2000 }}
               />
               <Text>{item.title}</Text>
@@ -127,15 +88,8 @@ export default function Mainpage({ navigation }) {
           keyExtractor={(item) => item.id}
         />
       </View>
-      <View
-        style={{
-          flex: 0.15,
-          backgroundColor: "#c6c6c6",
-          margin: 10,
-          borderRadius: 50,
-        }}
-      >
-        <Text>Contact Information</Text>
+      <View style={styles.footerContainer}>
+        <Contactinfo />
       </View>
     </SafeAreaView>
   );
@@ -149,11 +103,33 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  header: {
-    width: "20%",
-    height: "50%",
+  headerContainer: {
+    flex: 0.3,
+    flexDirection: "row",
+    margin: 10,
+    borderRadius: 50,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  headerImage: {
+    width: "40%",
+    height: "80%",
     borderRadius: 1000,
     margin: 10,
+  },
+  bodyContainer: {
+    flex: 1,
+    backgroundColor: "#4B4B4B",
+    margin: 10,
+    borderRadius: 50,
+  },
+  bodyList: {
+    flex: 1,
+    margin: 10,
+    borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
   },
   AndroidSafeArea: {
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
@@ -185,5 +161,11 @@ const styles = StyleSheet.create({
   },
   buttonClose: {
     backgroundColor: "#2196F3",
+  },
+  footerContainer: {
+    flex: 0.15,
+    backgroundColor: "#c6c6c6",
+    margin: 10,
+    borderRadius: 50,
   },
 });

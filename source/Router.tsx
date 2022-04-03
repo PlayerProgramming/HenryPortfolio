@@ -15,12 +15,11 @@ export default function Router() {
         </Stack.Group>
 
         <Stack.Group screenOptions={{ presentation: "modal" }}>
-          <Stack.Screen name="Project" component={Infos.Project} />
-          <Stack.Screen name="Programming" component={Infos.Programming} />
+          <Stack.Screen name="Projects" component={Infos.Projects} />
+          <Stack.Screen name="Skills" component={Infos.Skills} />
           <Stack.Screen name="Bio" component={Infos.Bio} />
-          <Stack.Screen name="Button4" component={Infos.Button4} />
-          <Stack.Screen name="Button5" component={Infos.Button5} />
-          <Stack.Screen name="Button6" component={Infos.Button6} />
+          <Stack.Screen name="Experiences" component={Infos.Experiences} />
+          <Stack.Screen name="Interests" component={Infos.Interests} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
