@@ -2,18 +2,15 @@ import {
   StyleSheet,
   Text,
   View,
-  Modal,
-  Alert,
-  Touchable,
   Image,
   TouchableOpacity,
+  Platform,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import React, { Component } from "react";
-import Collapsible from "react-native-collapsible";
 import Accordion from "react-native-collapsible/Accordion";
-import { useNavigationState } from "@react-navigation/native";
-// React, React Native, HTMl, CSS, JavaScript, TypeScript, Java, C++, SQL, Unreal Engine
+import { SafeAreaView } from "react-native-safe-area-context";
+import { LinearGradient } from "expo-linear-gradient";
+import { theme } from "./Mainpage";
 
 const felanguage: Array<any> = [
   {
@@ -119,33 +116,48 @@ const interestContents = [
 ];
 export function Bio({ navigation }) {
   return (
-    <View style={styles.centeredView}>
-      <Text style={[styles.modalText, { marginBottom: 50 }]}>
-        <Text></Text>An energetic and friendly front-end developer, exprienced
-        in React Native, but willing to expand to be a Full-Stack developer.
-        {"\n\n"}
-        Motivated and driven for a passion to learn new languages, and always
-        seeking opportunities to grow and contribute to the company's goals and
-        needs.
-      </Text>
-
-      <Text>
-        <Image
-          style={{ width: 35, height: 35 }}
-          source={require("../assets/etgcharacter1.png")}
-        />
-        Nickname "PlayerOne", because writing codes like a game.
-      </Text>
+    <SafeAreaView style={styles.container}>
+      <LinearGradient
+        colors={theme.gradientContents}
+        style={styles.background}
+        start={{ x: 0, y: 1 }}
+        end={{ x: 1, y: 1 }}
+      />
+      <View style={styles.textContainer}>
+        <Text style={[{ marginBottom: 50 }]}>
+          <Text></Text>An energetic and friendly front-end developer, exprienced
+          in React Native, but willing to expand to be a Full-Stack developer.
+          {"\n\n"}
+          Motivated and driven for a passion to learn new languages, and always
+          seeking opportunities to grow and contribute to the company's goals
+          and needs.
+        </Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text>
+          <Image
+            style={{ width: 35, height: 35 }}
+            source={require("../assets/etgcharacter1.png")}
+          />
+          Nickname "PlayerOne", because writing codes like a game.
+        </Text>
+      </View>
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Text style={styles.buttonClose}> Close me please</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }
 
 export function Skills({ navigation }) {
   return (
-    <View style={[styles.centeredView]}>
+    <SafeAreaView style={[styles.container]}>
+      <LinearGradient
+        colors={theme.gradientContents}
+        style={styles.background}
+        start={{ x: 0, y: 1 }}
+        end={{ x: 1, y: 1 }}
+      />
       <View
         style={{
           flexDirection: "row",
@@ -187,7 +199,7 @@ export function Skills({ navigation }) {
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Text style={styles.buttonClose}> Close me please</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -217,7 +229,13 @@ export class Projects extends Component {
   };
   render() {
     return (
-      <View style={[styles.centeredView, {}]}>
+      <SafeAreaView style={[styles.container, {}]}>
+        <LinearGradient
+          colors={theme.gradientContents}
+          style={styles.background}
+          start={{ x: 0, y: 1 }}
+          end={{ x: 1, y: 1 }}
+        />
         <Text style={styles.modalText}> Hello Project page</Text>
         <Accordion
           sections={projectContents}
@@ -231,14 +249,20 @@ export class Projects extends Component {
         <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
           <Text style={styles.buttonClose}> Close me please</Text>
         </TouchableOpacity>
-      </View>
+      </SafeAreaView>
     );
   }
 }
 
 export function Experiences({ navigation }) {
   return (
-    <View style={styles.centeredView}>
+    <SafeAreaView style={styles.container}>
+      <LinearGradient
+        colors={theme.gradientContents}
+        style={styles.background}
+        start={{ x: 0, y: 1 }}
+        end={{ x: 1, y: 1 }}
+      />
       <View>
         <Text>Elite Education</Text>
         <Text>2020 May ~ 2020 August</Text>
@@ -282,7 +306,7 @@ export function Experiences({ navigation }) {
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Text style={styles.buttonClose}> Close me please</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }
 export class Interests extends Component {
@@ -311,50 +335,44 @@ export class Interests extends Component {
   };
   render() {
     return (
-      <View style={[styles.centeredView, {}]}>
-        <Text style={styles.modalText}> Hello Project page</Text>
+      <SafeAreaView style={[styles.container, {}]}>
+        <LinearGradient
+          colors={theme.gradientContents}
+          style={styles.background}
+          start={{ x: 0, y: 1 }}
+          end={{ x: 1, y: 1 }}
+        />
+        <Text> Hello Project page</Text>
         <Accordion
           sections={interestContents}
           activeSections={this.state.activeSections}
           renderHeader={this._renderHeader}
           renderContent={this._renderContent}
           onChange={this._updateSections}
+          touchableComponent={TouchableOpacity}
         />
         {/* //https://github.com/HenryJKang/Night_LightV2
       //https://github.com/HenryJKang/Allegro */}
         <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
           <Text style={styles.buttonClose}> Close me please</Text>
         </TouchableOpacity>
-      </View>
+      </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  centeredView: {
+  container: {
     flex: 1,
     // justifyContent: "center",
     // alignItems: "center",
     margin: 20,
+    backgroundColor: "grey",
+    justifyContent: "center",
   },
-  modalView: {
-    margin: 20,
-    // backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-    // shadowColor: "#000",
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 2,
-    // },
-    // shadowOpacity: 0.25,
-    // shadowRadius: 4,
-    // elevation: 5,
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center",
+
+  textContainer: {
+    borderWidth: 0.5,
   },
   buttonClose: {
     backgroundColor: "#2196F3",
@@ -363,10 +381,30 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginVertical: 20,
   },
+  background: {
+    position: "absolute",
+    flex: 1,
+    left: 0,
+    right: 0,
+    top: 0,
+    margin: -20,
+    // height: Platform.OS === "android" ? "120%" : "100%",
+    ...Platform.select({
+      ios: {
+        height: 1000,
+      },
+      android: {
+        height: 1400,
+      },
+      default: {
+        height: "100%",
+      },
+    }),
+  },
 });
 // export function Projects({ navigation }) {
 //   return (
-//     <View style={[styles.centeredView, {}]}>
+//     <View style={[styles.container, {}]}>
 //       <Text style={styles.modalText}> Hello Project page</Text>
 //       <Text>Night Light</Text>
 //       <Text>Night Light Content </Text>

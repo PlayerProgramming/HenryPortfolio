@@ -17,14 +17,11 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Contactinfo from "./Contactinfo";
-const Layout: any = {
-  height: Dimensions.get("window").height,
-  width: Dimensions.get("window").width,
-};
 
-const theme: any = {
+export const theme: any = {
   contents: "#fffcdc",
   gradient: ["#feac5e", "#c779d0", "#4bc0c8"],
+  gradientContents: ["#bdc3c7", "#2c3e50"],
 };
 // #ff6e7f
 // →
@@ -59,14 +56,8 @@ const info: Array<any> = [
 
 export default function Mainpage({ navigation }) {
   return (
-    <SafeAreaView
-      style={[styles.AndroidSafeArea, { flex: 1, backgroundColor: "#D1E1D9" }]}
-    >
-      <LinearGradient
-        colors={theme.gradient}
-        style={styles.background}
-      ></LinearGradient>
-
+    <SafeAreaView style={[styles.AndroidSafeArea, { flex: 1 }]}>
+      <LinearGradient colors={theme.gradient} style={styles.background} />
       <View style={styles.headerContainer}>
         <View style={styles.headerImageContainer}>
           <Image
@@ -119,7 +110,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   headerContainer: {
-    flex: 0.3,
+    flex: 0.4,
     flexDirection: "row",
     margin: 10,
     borderRadius: 20,
@@ -133,7 +124,7 @@ const styles = StyleSheet.create({
     width: Platform.OS === "web" ? "80%" : "100%",
     height: Platform.OS === "web" ? 200 : undefined,
     flex: 1,
-    resizeMode: "cover",
+    resizeMode: "contain",
     margin: 10,
     borderRadius: 12,
   },
@@ -145,7 +136,6 @@ const styles = StyleSheet.create({
     // backgroundColor: theme.contents,
 
     margin: 10,
-    borderRadius: 25,
   },
   bodyList: {
     flex: 1,
@@ -157,7 +147,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 0.2,
     borderColor: "black",
-    borderRadius: 25,
+    borderRadius: 20,
   },
   bodyImage: {
     width: undefined,
@@ -170,18 +160,30 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   footerContainer: {
-    flex: 0.15,
-    // backgroundColor: theme.contents,
+    flex: 0.1,
     margin: 10,
-    borderRadius: 25,
+    // backgroundColor: theme.contents,
+    // borderRadius: 25,
   },
 
   background: {
     position: "absolute",
+    flex: 1,
     left: 0,
     right: 0,
     top: 0,
-    height: "150%",
+    // height: Platform.OS === "android" ? "120%" : "100%",
+    ...Platform.select({
+      ios: {
+        height: 1000,
+      },
+      android: {
+        height: 1400,
+      },
+      default: {
+        height: "100%",
+      },
+    }),
   },
   modalText: {
     marginBottom: 15,

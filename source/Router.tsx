@@ -9,12 +9,12 @@ export const Stack = createNativeStackNavigator();
 export default function Router() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Group>
           <Stack.Screen
             name="Mainpage"
             component={Mainpage}
-            options={{ headerShown: false }}
+            // options={{ headerShown: false }}
           />
         </Stack.Group>
 
