@@ -15,12 +15,20 @@ import {
   Platform,
   Linking,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import Contactinfo from "./Contactinfo";
 const Layout: any = {
   height: Dimensions.get("window").height,
   width: Dimensions.get("window").width,
 };
 
+const theme: any = {
+  contents: "#fffcdc",
+  gradient: ["#feac5e", "#c779d0", "#4bc0c8"],
+};
+// #ff6e7f
+// →
+// #bfe9ff
 const info: Array<any> = [
   {
     id: "Bio",
@@ -54,16 +62,22 @@ export default function Mainpage({ navigation }) {
     <SafeAreaView
       style={[styles.AndroidSafeArea, { flex: 1, backgroundColor: "#D1E1D9" }]}
     >
+      <LinearGradient
+        colors={theme.gradient}
+        style={styles.background}
+      ></LinearGradient>
+
       <View style={styles.headerContainer}>
-        <Image
-          style={styles.headerImage}
-          source={require("../assets/header_logo.jpg")}
-        />
+        <View style={styles.headerImageContainer}>
+          <Image
+            style={[styles.headerImage]}
+            source={require("../assets/etgcharacter1.png")}
+          />
+        </View>
         <Text>
           Hi, {"\n\n"}I'm Henry, {"\n\n"}the Fun Developer.{" "}
         </Text>
       </View>
-
       <View style={styles.bodyContainer}>
         <FlatList
           contentContainerStyle={{
@@ -78,7 +92,10 @@ export default function Mainpage({ navigation }) {
             >
               <Image
                 source={item.image}
-                style={{ width: 100, height: 100, borderRadius: 2000 }}
+                style={[
+                  { width: 100, height: 100, borderRadius: 20 },
+                  styles.bodyImage,
+                ]}
               />
               <Text>{item.title}</Text>
             </TouchableOpacity>
@@ -98,8 +115,6 @@ export default function Mainpage({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //flexDirection: "row",
-    // backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -107,38 +122,70 @@ const styles = StyleSheet.create({
     flex: 0.3,
     flexDirection: "row",
     margin: 10,
-    borderRadius: 50,
-    backgroundColor: "#fff",
+    borderRadius: 20,
+    borderWidth: 0.2,
+    // backgroundColor: theme.contents,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
   },
+
   headerImage: {
-    width: "40%",
-    height: "80%",
-    borderRadius: 1000,
+    width: Platform.OS === "web" ? "80%" : "100%",
+    height: Platform.OS === "web" ? 200 : undefined,
+    flex: 1,
+    resizeMode: "cover",
     margin: 10,
+    borderRadius: 12,
+  },
+  headerImageContainer: {
+    flex: 0.4,
   },
   bodyContainer: {
     flex: 1,
-    backgroundColor: "#4B4B4B",
+    // backgroundColor: theme.contents,
+
     margin: 10,
-    borderRadius: 50,
+    borderRadius: 25,
   },
   bodyList: {
     flex: 1,
-    margin: 10,
-    borderRadius: 25,
+    margin: 5,
+    marginVertical: 30,
+    width: "100%",
+    height: 100,
     justifyContent: "center",
     alignItems: "center",
+    borderWidth: 0.2,
+    borderColor: "black",
+    borderRadius: 25,
+  },
+  bodyImage: {
+    width: undefined,
+    height: undefined,
+    aspectRatio: 1,
+    resizeMode: "contain",
+    flex: 1,
   },
   AndroidSafeArea: {
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22,
+  footerContainer: {
+    flex: 0.15,
+    // backgroundColor: theme.contents,
+    margin: 10,
+    borderRadius: 25,
+  },
+
+  background: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    height: "150%",
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
   },
   modalView: {
     margin: 20,
@@ -153,19 +200,5 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    elevation: 5,
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center",
-  },
-  buttonClose: {
-    backgroundColor: "#2196F3",
-  },
-  footerContainer: {
-    flex: 0.15,
-    backgroundColor: "#c6c6c6",
-    margin: 10,
-    borderRadius: 50,
   },
 });

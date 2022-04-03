@@ -11,7 +11,11 @@ export default function Router() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Group>
-          <Stack.Screen name="Mainpage" component={Mainpage} />
+          <Stack.Screen
+            name="Mainpage"
+            component={Mainpage}
+            options={{ headerShown: false }}
+          />
         </Stack.Group>
 
         <Stack.Group screenOptions={{ presentation: "modal" }}>

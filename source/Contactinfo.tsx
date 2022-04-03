@@ -30,9 +30,12 @@ const contactinfo: Array<any> = [
 export default function Contactinfo() {
   return (
     <FlatList
-      contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}
-      numColumns={1}
-      horizontal={true}
+      contentContainerStyle={{
+        flexGrow: 1,
+        justifyContent: "center",
+      }}
+      numColumns={3}
+      scrollEnabled={false}
       data={contactinfo}
       renderItem={({ item }) => (
         <TouchableOpacity
@@ -61,10 +64,17 @@ function imageClick(image: any) {
 
 const styles = StyleSheet.create({
   bodyList: {
+    width: "100%",
+    height: 50,
     flex: 1,
-    marginHorizontal: 40,
-    justifyContent: "center",
+    marginHorizontal: 35,
     alignItems: "center",
   },
-  images: { width: 50, height: 50, borderRadius: 2000 },
+  images: {
+    width: undefined,
+    height: undefined,
+    aspectRatio: 1,
+    resizeMode: "contain",
+    flex: 1,
+  },
 });

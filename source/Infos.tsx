@@ -102,12 +102,14 @@ const interestContents = [
   {
     title: "Games",
     image: "",
-    content: "The games I had fun and played :\nLeague of Legends, Enter the Gungeon, Fortnite, Rainbow Six Siege,  ",
+    content:
+      "The games I had fun and played :\nLeague of Legends, Enter the Gungeon, Fortnite, Rainbow Six Siege,  ",
   },
   {
     title: "Sports",
     image: "",
-    content: "I really love swimming the most and basketball. I currently do workout at least 5 days a week.",
+    content:
+      "I really love swimming the most and basketball. I currently do workout at least 5 days a week.",
   },
   {
     title: "Typing",
@@ -119,8 +121,8 @@ export function Bio({ navigation }) {
   return (
     <View style={styles.centeredView}>
       <Text style={[styles.modalText, { marginBottom: 50 }]}>
-        An energetic and friendly front-end developer, exprienced in React
-        Native, but willing to expand to be a Full-Stack developer.
+        <Text></Text>An energetic and friendly front-end developer, exprienced
+        in React Native, but willing to expand to be a Full-Stack developer.
         {"\n\n"}
         Motivated and driven for a passion to learn new languages, and always
         seeking opportunities to grow and contribute to the company's goals and
