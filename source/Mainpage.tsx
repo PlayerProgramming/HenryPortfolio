@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
 
+  test1: {},
   headerImage: {
     width: Platform.OS === "web" ? "80%" : "100%",
     height: Platform.OS === "web" ? 200 : undefined,
