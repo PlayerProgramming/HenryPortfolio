@@ -166,6 +166,10 @@ const styles = StyleSheet.create({
     // borderRadius: 25,
   },
 
+  test2: {
+    backgroundColor: "red",
+  },
+
   background: {
     position: "absolute",
     flex: 1,
