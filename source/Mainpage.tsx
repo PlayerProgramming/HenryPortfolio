@@ -17,42 +17,17 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Contactinfo from "./Contactinfo";
-
+import { info } from "./data";
 export const theme: any = {
   contents: "#fffcdc",
   gradient: ["#feac5e", "#c779d0", "#4bc0c8"],
-  gradientContents: ["#bdc3c7", "#2c3e50"],
+  // gradient: ["#d9a7c7", "#fffcdc"],
+  textContents: "#859398",
+  gradientContents: ["#606c88", "#3f4c6b"],
 };
 // #ff6e7f
 // →
 // #bfe9ff
-const info: Array<any> = [
-  {
-    id: "Bio",
-    title: "Bio",
-    image: require("../assets/Bio.png"),
-  },
-  {
-    id: "Skills",
-    title: "Skills",
-    image: require("../assets/Skills.png"),
-  },
-  {
-    id: "Projects",
-    title: "Projects",
-    image: require("../assets/Projects.png"),
-  },
-  {
-    id: "Experiences",
-    title: "Experiences",
-    image: require("../assets/Experiences.png"),
-  },
-  {
-    id: "Interests",
-    title: "Interests",
-    image: require("../assets/Interests.png"),
-  },
-];
 
 export default function Mainpage({ navigation }) {
   return (
