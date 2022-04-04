@@ -236,7 +236,7 @@ export class Projects extends Component {
           start={{ x: 0, y: 1 }}
           end={{ x: 1, y: 1 }}
         />
-        <Text style={styles.modalText}> Hello Project page</Text>
+        <Text> Hello Project page</Text>
         <Accordion
           sections={projectContents}
           activeSections={this.state.activeSections}
@@ -402,20 +402,3 @@ const styles = StyleSheet.create({
     }),
   },
 });
-// export function Projects({ navigation }) {
-//   return (
-//     <View style={[styles.container, {}]}>
-//       <Text style={styles.modalText}> Hello Project page</Text>
-//       <Text>Night Light</Text>
-//       <Text>Night Light Content </Text>
-//       <Text>Allegro</Text>
-//       <Text>Random Lotto Number Generator</Text>
-//       <Text>G2L</Text>
-//       {/* //https://github.com/HenryJKang/Night_LightV2
-//       //https://github.com/HenryJKang/Allegro */}
-//       <TouchableOpacity onPress={() => navigation.goBack()}>
-//         <Text style={styles.buttonClose}> Close me please</Text>
-//       </TouchableOpacity>
-//     </View>
-//   );
-// }
