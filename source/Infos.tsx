@@ -193,17 +193,6 @@ export class Projects extends Component {
           start={{ x: 0, y: 1 }}
           end={{ x: 1, y: 1 }}
         />
-<<<<<<< HEAD
-        <Text> Hello Project page</Text>
-        <Accordion
-          sections={projectContents}
-          activeSections={this.state.activeSections}
-          renderHeader={this._renderHeader}
-          renderContent={this._renderContent}
-          onChange={this._updateSections}
-        />
-        {/* //https://github.com/HenryJKang/Night_LightV2
-=======
         <View style={styles.contentsTitle}>
           <Text style={styles.contentsTitleText}> Projects</Text>
         </View>
@@ -218,7 +207,6 @@ export class Projects extends Component {
             touchableComponent={TouchableOpacity}
           />
           {/* //https://github.com/HenryJKang/Night_LightV2
->>>>>>> henry
       //https://github.com/HenryJKang/Allegro */}
           <View style={{ alignItems: "center" }}>
             <AwesomeButton onPress={() => this.props.navigation.goBack()}>
