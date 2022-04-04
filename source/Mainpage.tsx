@@ -184,6 +184,8 @@ const styles = StyleSheet.create({
         height: "100%",
       },
     }),
+
+    borderColor: "red",
   },
   modalText: {
     marginBottom: 15,

@@ -284,7 +284,7 @@ export function Experiences({ navigation }) {
             Enhanced the scheduling of the facility. {"\n"}Strengthened the
             knowledge of the mental illness and the symptoms of it. {"\n"}
             Pursued communicating and interacting with people who have mental
-            problems. {"\n"}
+            illnesses. {"\n"}
           </Text>
         </View>
         <View>
