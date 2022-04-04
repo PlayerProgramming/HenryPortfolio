@@ -1,3 +1,17 @@
+export const theme: any = {
+  contents: "#fffcdc",
+  gradient: ["#feac5e", "#c779d0", "#4bc0c8"],
+  // gradient: ["#d9a7c7", "#fffcdc"],
+  textContents: "#859398",
+  //   gradientContents: ["#ADA996", "#f2f2f2", "#dbdbdb", "#eaeaea"],
+  gradientContents: ["#ee9ca7", "#ffdde1"],
+  //   gradientContents: ["#A8B293", "#A8B293"],
+  descfont: "Teko_300Light",
+  //   descfont: "Teko_400Regular",
+  subtitlefont: "Teko_400Regular",
+  titlefont: "Teko_700Bold",
+};
+export const fontColor = undefined;
 export const felanguage: Array<any> = [
   {
     name: "HTML",
@@ -54,7 +68,16 @@ export const mobileDevelopment: Array<any> = [
     name: "Android Studio",
   },
 ];
-
+export const exitButtonText = "Run away";
+export const bioContents = {
+  content:
+    "An energetic and friendly front-end developer, exprienced in React" +
+    "Native, but willing to expand to be a Full-Stack developer." +
+    "\nMotivated and driven for a passion to learn new languages, and" +
+    "always seeking opportunities to grow and contribute to the company's " +
+    "goals and needs.",
+  tmi: " Nickname 'PlayerOne', because writing codes like a game.",
+};
 export const projectContents = [
   {
     title: "NightLight",
@@ -66,7 +89,7 @@ export const projectContents = [
       "Android Studio, Google Map API, Vancouver Open Data API \n\n" +
       "- Designed visual mock-ups/prototypes from wire-frames and" +
       "delivered final design production-ready assets for development \n\n" +
-      "- Implemented a function which sends a preset" +
+      "- Implemented a function which sends a preset " +
       "google map route of the user to contacts in emergency situations",
   },
   {
@@ -99,15 +122,15 @@ export const interestContents = [
     title: "Games",
     image: "",
     content:
-      "League of Legends, Enter the Gungeon, Fortnite, Rainbow Six Siege,\n" +
-      "TMI1: My League Of Legends highest tier was Master\n" +
+      "League of Legends, Enter the Gungeon, Fortnite, Rainbow Six Siege\n" +
+      "TMI1: League of Legends, highest tier: Master\n" +
       "TMI2: I have streamd Fortnite and got 100 followers and 40 average views in '3' days.",
   },
   {
     title: "Sports",
     image: "",
     content:
-      "I really love swimming the most and basketball. I currently do workout at least 5 days a week.",
+      "I really love swimming the most, as well as basketball.\n I currently do workout at least 5 days a week.",
   },
   {
     title: "Typing",
@@ -119,36 +142,40 @@ export const experienceContents = [
   {
     name: "Elite Education",
     date: "2020 May ~ 2020 August",
-    details: "- Tutoring JavaScript and Java for students, ages 8 - 15",
+    details:
+      "White Rock, BC\n " +
+      "- Tutored JavaScript and Java for students, ages 8 - 15",
   },
   {
     name: "British Columbia Institute of Technology",
     date: "2018 Spetember ~ 2020 June",
     details:
-      "- Achieved Diploma in Computer System Technology Learned Object " +
-      "Oriented Programming, Algorithms, Web Development, Leaderships ",
+      "Burnaby, BC\n" +
+      "- Diploma in Computer System Technology. \nLearned Object " +
+      "Oriented Programming, Algorithms, Web Development, and Leaderships ",
   },
   {
     name: "Canadian Mental Health Association, Volunteer",
     date: "2016 Spetember ~ 2017 Feburary",
     details:
-      "- Enhanced the scheduling of the facility. \nStrengthened the" +
-      "knowledge of the mental illness and the symptoms of it. \n" +
-      "- Pursued communicating and interacting with people who have mental" +
-      "illnesses. \n",
+      "Swift Current, SK\n" +
+      "- Contributed to the scheduling of the facility. \nStrengthened " +
+      "knowledge of various mental illnesses and the symptoms. \n" +
+      "- Gained an understanding of communicating and interacting with the patients.",
   },
   {
     name: "Swift Current Aquatic Centre, Swim Instructor",
     date: "2016 November ~ 2017 January",
     details:
-      "- Prepared various swim courses and routiens efficiently for youth.\n" +
+      "Swift Current, SK\n" +
+      "- Prepared various swim courses and routines efficiently for youth.\n" +
       "- Directed the students to ensure the safety and rules. \nInformed" +
-      "the progresses of the students to their guardians.\n",
+      "the progresses of the students to their guardians.",
   },
   {
     name: "Saskatchewan Comprehensive Highschool",
     date: "2014 Spetember ~ 2018 June",
-    details: "Located in Swift Current, Saskatchewan ",
+    details: "Swift Current, SK ",
   },
 ];
 
@@ -179,3 +206,7 @@ export const info: Array<any> = [
     image: require("../assets/Interests.png"),
   },
 ];
+
+// export const fontsLoading = () => {
+//   let [fontsLoaded] = useFonts({ Teko_400Regular, Teko_700Bold });
+// };

@@ -65,9 +65,8 @@ function imageClick(image: any) {
 const styles = StyleSheet.create({
   bodyList: {
     width: "100%",
-    height: 50,
+    height: 30,
     flex: 1,
-    marginHorizontal: 35,
     alignItems: "center",
   },
   images: {
