@@ -167,8 +167,8 @@ const styles = StyleSheet.create({
   },
 
   test: {
-    borderBottomColor:"red",
-  }
+    borderBottomColor: "red",
+  },
 
   background: {
     position: "absolute",
