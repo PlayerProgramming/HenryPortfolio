@@ -54,7 +54,16 @@ export const mobileDevelopment: Array<any> = [
     name: "Android Studio",
   },
 ];
-
+export const exitButtonText = "Run away";
+export const bioContents = {
+  content:
+    "An energetic and friendly front-end developer, exprienced in React" +
+    "Native, but willing to expand to be a Full-Stack developer." +
+    "\n\nMotivated and driven for a passion to learn new languages, and" +
+    "always seeking opportunities to grow and contribute to the company's" +
+    "goals and needs.",
+  tmi: "Nickname 'PlayerOne', because writing codes like a game.",
+};
 export const projectContents = [
   {
     title: "NightLight",
@@ -148,7 +157,7 @@ export const experienceContents = [
   {
     name: "Saskatchewan Comprehensive Highschool",
     date: "2014 Spetember ~ 2018 June",
-    details: "Located in Swift Current, Saskatchewan ",
+    details: "Swift Current, Saskatchewan ",
   },
 ];
 
@@ -179,3 +188,10 @@ export const info: Array<any> = [
     image: require("../assets/Interests.png"),
   },
 ];
+export const theme: any = {
+  contents: "#fffcdc",
+  gradient: ["#feac5e", "#c779d0", "#4bc0c8"],
+  // gradient: ["#d9a7c7", "#fffcdc"],
+  textContents: "#859398",
+  gradientContents: ["#606c88", "#3f4c6b"],
+};

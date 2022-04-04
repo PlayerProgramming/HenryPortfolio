@@ -1,38 +1,23 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import {
   StyleSheet,
   Text,
   View,
   SafeAreaView,
-  ScrollView,
   StatusBar,
   Image,
-  Dimensions,
-  Modal,
   TouchableOpacity,
   FlatList,
-  Alert,
   Platform,
-  Linking,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Contactinfo from "./Contactinfo";
-import { info } from "./data";
-export const theme: any = {
-  contents: "#fffcdc",
-  gradient: ["#feac5e", "#c779d0", "#4bc0c8"],
-  // gradient: ["#d9a7c7", "#fffcdc"],
-  textContents: "#859398",
-  gradientContents: ["#606c88", "#3f4c6b"],
-};
-// #ff6e7f
-// →
-// #bfe9ff
+import * as data from "./data";
 
 export default function Mainpage({ navigation }) {
   return (
     <SafeAreaView style={[styles.AndroidSafeArea, { flex: 1 }]}>
-      <LinearGradient colors={theme.gradient} style={styles.background} />
+      <LinearGradient colors={data.theme.gradient} style={styles.background} />
       <View style={styles.headerContainer}>
         <View style={styles.headerImageContainer}>
           <Image
@@ -50,7 +35,7 @@ export default function Mainpage({ navigation }) {
             flexGrow: 1,
             justifyContent: "center",
           }}
-          data={info}
+          data={data.info}
           renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.bodyList}
@@ -90,7 +75,6 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 20,
     borderWidth: 0.2,
-    // backgroundColor: theme.contents,
     alignItems: "center",
     justifyContent: "space-evenly",
   },
@@ -109,8 +93,6 @@ const styles = StyleSheet.create({
   },
   bodyContainer: {
     flex: 1,
-    // backgroundColor: theme.contents,
-
     margin: 10,
   },
   bodyList: {
@@ -138,8 +120,6 @@ const styles = StyleSheet.create({
   footerContainer: {
     flex: 0.1,
     margin: 10,
-    // backgroundColor: theme.contents,
-    // borderRadius: 25,
   },
 
   background: {

@@ -11,59 +11,55 @@ import React, { Component } from "react";
 import Accordion from "react-native-collapsible/Accordion";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import { theme } from "./Mainpage";
+
+import { useNavigation } from "@react-navigation/native";
 import AwesomeButtonSocial from "react-native-really-awesome-button";
 import AwesomeButton from "react-native-really-awesome-button";
-import {
-  felanguage,
-  belanguage,
-  gameDevelopment,
-  mobileDevelopment,
-  projectContents,
-  interestContents,
-  experienceContents,
-} from "./data";
-
+import * as data from "./data";
+function exitButton({ navigation }) {
+  return (
+    <View style={{ alignItems: "center" }}>
+      <AwesomeButton onPress={() => navigation.goBack()}>
+        <Text> {data.exitButtonText}</Text>
+      </AwesomeButton>
+    </View>
+  );
+}
 export function Bio({ navigation }) {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient
-        colors={theme.gradientContents}
+        colors={data.theme.gradientContents}
         style={styles.background}
         start={{ x: 0, y: 1 }}
         end={{ x: 1, y: 1 }}
       />
       <View style={styles.contentsTitle}>
-        <Text style={[styles.contentsTitleText, { color: theme.textContents }]}>
+        <Text
+          style={[styles.contentsTitleText, { color: data.theme.textContents }]}
+        >
           Biography
         </Text>
       </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.textContainerText}>
-          An energetic and friendly front-end developer, exprienced in React
-          Native, but willing to expand to be a Full-Stack developer.
-          {"\n\n"}
-          Motivated and driven for a passion to learn new languages, and always
-          seeking opportunities to grow and contribute to the company's goals
-          and needs.
-        </Text>
-      </View>
-      <View style={{ alignItems: "center" }}>
-        <Text>TMI</Text>
-      </View>
-      <View style={styles.textContainer}>
-        <Text style={[{ margin: 10, fontSize: 20 }]}>
-          <Image
-            style={{ width: 35, height: 35 }}
-            source={require("../assets/etgcharacter1.png")}
-          />
-          Nickname "PlayerOne", because writing codes like a game.
-        </Text>
-      </View>
-      <View style={{ alignItems: "center" }}>
-        <AwesomeButton onPress={() => navigation.goBack()}>
-          <Text> Close me please</Text>
-        </AwesomeButton>
+      <View style={styles.container}>
+        <View style={styles.textContainer}>
+          <Text style={styles.textContainerText}>
+            {data.bioContents.content}
+          </Text>
+        </View>
+        <View style={{ alignItems: "center" }}>
+          <Text>TMI</Text>
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={[{ margin: 10, fontSize: 20 }]}>
+            <Image
+              style={{ width: 35, height: 35 }}
+              source={require("../assets/etgcharacter1.png")}
+            />
+            {data.bioContents.tmi}
+          </Text>
+        </View>
+        {exitButton({ navigation })}
       </View>
     </SafeAreaView>
   );
@@ -73,7 +69,7 @@ export function Skills({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient
-        colors={theme.gradientContents}
+        colors={data.theme.gradientContents}
         style={styles.background}
         start={{ x: 0, y: 1 }}
         end={{ x: 1, y: 1 }}
@@ -92,8 +88,8 @@ export function Skills({ navigation }) {
         >
           <View style={styles.skillsContainer}>
             <Text style={styles.skillstitle}>Front-end Languages</Text>
-            {felanguage &&
-              felanguage.map((item: any) => (
+            {data.felanguage &&
+              data.felanguage.map((item: any) => (
                 <Text style={styles.textContainerText} key={item.name}>
                   {item.name}
                 </Text>
@@ -102,8 +98,8 @@ export function Skills({ navigation }) {
 
           <View style={styles.skillsContainer}>
             <Text style={styles.skillstitle}>Back-end Languages</Text>
-            {belanguage &&
-              belanguage.map((item: any) => (
+            {data.belanguage &&
+              data.belanguage.map((item: any) => (
                 <Text style={styles.textContainerText} key={item.name}>
                   {item.name}
                 </Text>
@@ -111,8 +107,8 @@ export function Skills({ navigation }) {
           </View>
           <View style={styles.skillsContainer}>
             <Text style={styles.skillstitle}>Game Development</Text>
-            {gameDevelopment &&
-              gameDevelopment.map((item) => (
+            {data.gameDevelopment &&
+              data.gameDevelopment.map((item) => (
                 <Text style={styles.textContainerText} key={item.name}>
                   {item.name}
                 </Text>
@@ -120,8 +116,8 @@ export function Skills({ navigation }) {
           </View>
           <View style={styles.skillsContainer}>
             <Text style={styles.skillstitle}>Mobile Development</Text>
-            {mobileDevelopment &&
-              mobileDevelopment.map((item) => (
+            {data.mobileDevelopment &&
+              data.mobileDevelopment.map((item) => (
                 <Text style={styles.textContainerText} key={item.name}>
                   {item.name}
                 </Text>
@@ -129,11 +125,7 @@ export function Skills({ navigation }) {
           </View>
         </View>
 
-        <View style={{ alignItems: "center" }}>
-          <AwesomeButton onPress={() => navigation.goBack()}>
-            <Text> Close me please</Text>
-          </AwesomeButton>
-        </View>
+        {exitButton({ navigation })}
       </View>
     </SafeAreaView>
   );
@@ -144,15 +136,25 @@ export class Projects extends Component {
     activeSections: [],
   };
 
+  Navi = () => {
+    exitButton(this.props.navigation);
+  };
   _renderHeader = (section: any) => {
     return (
       <View style={styles.textContainer}>
-        <Text style={[styles.textContainerText, { textAlign: "center" }]}>
-          {section.title}
-        </Text>
+        <Image
+          style={styles.expandableLogo}
+          source={require("../assets/plus.png")}
+        />
+        <View>
+          <Text style={[styles.textContainerText, { alignSelf: "center" }]}>
+            {section.title}
+          </Text>
+        </View>
         <Text style={{ textAlign: "center", fontSize: 15 }}>
           {section.subtitle}
         </Text>
+        <View style={{ alignItems: "flex-end" }}></View>
       </View>
     );
   };
@@ -188,7 +190,7 @@ export class Projects extends Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <LinearGradient
-          colors={theme.gradientContents}
+          colors={data.theme.gradientContents}
           style={styles.background}
           start={{ x: 0, y: 1 }}
           end={{ x: 1, y: 1 }}
@@ -198,7 +200,7 @@ export class Projects extends Component {
         </View>
         <View style={[styles.container]}>
           <Accordion
-            sections={projectContents}
+            sections={data.projectContents}
             // containerStyle={{ width: 1000 }}
             activeSections={this.state.activeSections}
             renderHeader={this._renderHeader}
@@ -210,7 +212,7 @@ export class Projects extends Component {
       //https://github.com/HenryJKang/Allegro */}
           <View style={{ alignItems: "center" }}>
             <AwesomeButton onPress={() => this.props.navigation.goBack()}>
-              <Text> Close me please</Text>
+              <Text> {data.exitButtonText}</Text>
             </AwesomeButton>
           </View>
         </View>
@@ -227,6 +229,10 @@ export class Experiences extends Component {
   _renderHeader = (section: any) => {
     return (
       <View style={styles.textContainer}>
+        <Image
+          style={styles.expandableLogo}
+          source={require("../assets/plus.png")}
+        />
         <Text style={[{ fontSize: 16, fontWeight: "bold" }]}>
           {section.name}
         </Text>
@@ -246,11 +252,15 @@ export class Experiences extends Component {
   _updateSections = (activeSections: any) => {
     this.setState({ activeSections });
   };
+
+  awesomebutton = () => {
+    return <AwesomeButton backgroundColor="#feac5e" />;
+  };
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <LinearGradient
-          colors={theme.gradientContents}
+          colors={data.theme.gradientContents}
           style={styles.background}
           start={{ x: 0, y: 1 }}
           end={{ x: 1, y: 1 }}
@@ -260,7 +270,7 @@ export class Experiences extends Component {
         </View>
         <View style={styles.container}>
           <Accordion
-            sections={experienceContents}
+            sections={data.experienceContents}
             activeSections={this.state.activeSections}
             renderHeader={this._renderHeader}
             renderContent={this._renderContent}
@@ -269,7 +279,7 @@ export class Experiences extends Component {
           />
           <View style={{ alignItems: "center" }}>
             <AwesomeButton onPress={() => this.props.navigation.goBack()}>
-              <Text> Close me please</Text>
+              <Text> {data.exitButtonText}</Text>
             </AwesomeButton>
           </View>
         </View>
@@ -285,6 +295,10 @@ export class Interests extends Component {
   _renderHeader = (section: any) => {
     return (
       <View style={styles.textContainer}>
+        <Image
+          style={styles.expandableLogo}
+          source={require("../assets/plus.png")}
+        />
         <Text
           style={[{ fontSize: 40, fontWeight: "bold", textAlign: "center" }]}
         >
@@ -301,7 +315,6 @@ export class Interests extends Component {
       </View>
     );
   };
-
   _updateSections = (activeSections: any) => {
     this.setState({ activeSections });
   };
@@ -309,7 +322,7 @@ export class Interests extends Component {
     return (
       <SafeAreaView style={[{ flex: 1 }]}>
         <LinearGradient
-          colors={theme.gradientContents}
+          colors={data.theme.gradientContents}
           style={styles.background}
           start={{ x: 0, y: 1 }}
           end={{ x: 1, y: 1 }}
@@ -319,7 +332,7 @@ export class Interests extends Component {
         </View>
         <View style={[styles.container, {}]}>
           <Accordion
-            sections={interestContents}
+            sections={data.interestContents}
             activeSections={this.state.activeSections}
             renderHeader={this._renderHeader}
             renderContent={this._renderContent}
@@ -330,7 +343,7 @@ export class Interests extends Component {
       //https://github.com/HenryJKang/Allegro */}
           <View style={{ alignItems: "center" }}>
             <AwesomeButton onPress={() => this.props.navigation.goBack()}>
-              <Text> Close me please</Text>
+              <Text> {data.exitButtonText}</Text>
             </AwesomeButton>
           </View>
         </View>
@@ -344,24 +357,38 @@ const styles = StyleSheet.create({
     flex: 1,
     // justifyContent: "center",
     // alignItems: "center",
-    margin: 20,
-    marginTop: -20,
+    margin: 15,
+    marginTop: 10,
     justifyContent: "center",
   },
   contentsTitle: {
     alignItems: "center",
   },
   contentsTitleText: {
-    fontSize: 65,
+    fontSize: 60,
     fontWeight: "bold",
   },
-
+  expandableLogo: {
+    width: 20,
+    height: 20,
+    padding: 15,
+    alignSelf: "flex-end",
+    position: "absolute",
+  },
   textContainer: {
+    width: "100%",
     borderWidth: 0.5,
     marginVertical: 10,
     borderRadius: 10,
     padding: 10,
+    justifyContent: "center",
   },
+  // textContainer: {
+  //   borderWidth: 0.5,
+  //   marginVertical: 10,
+  //   borderRadius: 10,
+  //   padding: 10,
+  // },
   textContainerText: {
     fontSize: 20,
   },
