@@ -18,4 +18,6 @@ It's a small React Native portfolio app for introducing myself:sunglasses: using
 ## Example to save your time
 
 
-![HenryPortfolio_example](https://user-images.githubusercontent.com/94532638/161722755-8682eaac-00af-4af8-9f5a-6a8e5086716a.gif)
+
+
+![henry_portfolio_example](https://user-images.githubusercontent.com/94532638/161726249-bddeda24-a4c4-434f-8008-395d989c8b59.gif)
