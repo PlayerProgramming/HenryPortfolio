@@ -1,0 +1,21 @@
+# Henry Portfolio
+
+## Introduction
+It's a small React Native portfolio app for introducing myself:sunglasses: using Expo CLI on iOS, Android and even Web version!  
+( Did not optimized for the Web version since the main focus of this project was mobile platforms ) 
+## How to check the app out
+### 1. Using Expo Go app
+#### Due to iOS policy, **only Android is available** using the link
+1. Go to "https://expo.dev/@playerprogramming/HenryPortfolio?serviceType=classic&distribution=expo-go"
+2. Scan the QR code on the page using the 'camera app' or 'Expo app' and it would be ready to go.
+
+### 2. Locally
+1. git clone this repository
+2. Type "npm start" or "expo start" [If expo or npm is already installed]
+3. Enter "i" for iOS or "a" for Android, or scan the QR code on the console to check it out on your own device.
+
+-----
+## Example to save your time
+
+
+![HenryPortfolio_example](https://user-images.githubusercontent.com/94532638/161722755-8682eaac-00af-4af8-9f5a-6a8e5086716a.gif)
