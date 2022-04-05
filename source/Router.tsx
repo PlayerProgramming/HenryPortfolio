@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -11,13 +11,8 @@ export default function Router() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Group>
-          <Stack.Screen
-            name="Mainpage"
-            component={Mainpage}
-            // options={{ headerShown: false }}
-          />
+          <Stack.Screen name="Mainpage" component={Mainpage} />
         </Stack.Group>
-
         <Stack.Group screenOptions={{ presentation: "modal" }}>
           <Stack.Screen name="Projects" component={Infos.Projects} />
           <Stack.Screen name="Skills" component={Infos.Skills} />
@@ -29,5 +24,3 @@ export default function Router() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({});

@@ -1,15 +1,12 @@
 export const theme: any = {
   contents: "#fffcdc",
   gradient: ["#feac5e", "#c779d0", "#4bc0c8"],
-  // gradient: ["#d9a7c7", "#fffcdc"],
   textContents: "#859398",
-  //   gradientContents: ["#ADA996", "#f2f2f2", "#dbdbdb", "#eaeaea"],
-  gradientContents: ["#ee9ca7", "#ffdde1"],
-  //   gradientContents: ["#A8B293", "#A8B293"],
+  gradientContents: ["#e7d7be", "#e7d7be"],
   descfont: "Teko_300Light",
-  //   descfont: "Teko_400Regular",
   subtitlefont: "Teko_400Regular",
   titlefont: "Teko_700Bold",
+  exitButton: "#ee9ca7",
 };
 export const fontColor = undefined;
 export const felanguage: Array<any> = [
@@ -130,7 +127,7 @@ export const interestContents = [
     title: "Sports",
     image: "",
     content:
-      "I really love swimming the most, as well as basketball.\n I currently do workout at least 5 days a week.",
+      "I really love swimming the most, as well as basketball.\n I currently workout at least 5 days a week.",
   },
   {
     title: "Typing",

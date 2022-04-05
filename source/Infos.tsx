@@ -1,14 +1,12 @@
 import {
-  StyleSheet,
   Text,
   View,
   Image,
   TouchableOpacity,
-  Platform,
   Linking,
   ScrollView,
 } from "react-native";
-import React, { Component } from "react";
+import React from "react";
 import Accordion from "react-native-collapsible/Accordion";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
@@ -16,16 +14,26 @@ import AwesomeButtonSocial from "react-native-really-awesome-button";
 import AwesomeButton from "react-native-really-awesome-button";
 import * as data from "./data";
 import styles from "./Style";
-function exitButton({ navigation }) {
+import { useNavigation } from "@react-navigation/native";
+interface Props {
+  navigation: any;
+}
+function exitButton() {
+  const navigation = useNavigation();
   return (
     <View style={{ alignItems: "center" }}>
-      <AwesomeButton onPress={() => navigation.goBack()}>
-        <Text> {data.exitButtonText}</Text>
+      <AwesomeButton
+        backgroundColor={data.theme.exitButton}
+        raiseLevel={4}
+        stretch={true}
+        onPress={() => navigation.goBack()}
+      >
+        <Text style={styles.descfont}> {data.exitButtonText}</Text>
       </AwesomeButton>
     </View>
   );
 }
-export function Bio({ navigation }) {
+export function Bio() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient
@@ -55,13 +63,13 @@ export function Bio({ navigation }) {
             {data.bioContents.tmi}
           </Text>
         </View>
-        {exitButton({ navigation })}
+        {exitButton()}
       </View>
     </SafeAreaView>
   );
 }
 
-export function Skills({ navigation }) {
+export function Skills() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient
@@ -129,17 +137,16 @@ export function Skills({ navigation }) {
           </View>
         </View>
 
-        {exitButton({ navigation })}
+        {exitButton()}
       </View>
     </SafeAreaView>
   );
 }
 
-export class Projects extends Component {
+export class Projects extends React.Component<Props> {
   state = {
     activeSections: [],
   };
-
   _renderHeader = (section: any) => {
     return (
       <View style={styles.textContainer}>
@@ -160,7 +167,6 @@ export class Projects extends Component {
       </View>
     );
   };
-
   _renderContent = (section: any) => {
     return (
       <View>
@@ -168,8 +174,6 @@ export class Projects extends Component {
         <View style={{ alignItems: "center", margin: 10 }}>
           <AwesomeButtonSocial
             backgroundColor="#333"
-            borderColor="#f5f5f5"
-            paddingBottom={0}
             raiseLevel={4}
             height={30}
             stretch={true}
@@ -185,7 +189,6 @@ export class Projects extends Component {
       </View>
     );
   };
-
   _updateSections = (activeSections: any) => {
     this.setState({ activeSections });
   };
@@ -198,7 +201,7 @@ export class Projects extends Component {
           start={{ x: 0, y: 1 }}
           end={{ x: 1, y: 1 }}
         />
-        <ScrollView>
+        <ScrollView style={{ flex: 1 }}>
           <View style={styles.contentsTitle}>
             <Text style={[styles.titlefont, { fontSize: 60 }]}> Projects</Text>
           </View>
@@ -213,8 +216,12 @@ export class Projects extends Component {
               // expandMultiple={true}
             />
             <View style={{ alignItems: "center" }}>
-              <AwesomeButton onPress={() => this.props.navigation.goBack()}>
-                <Text> {data.exitButtonText}</Text>
+              <AwesomeButton
+                backgroundColor={data.theme.exitButton}
+                stretch={true}
+                onPress={() => this.props.navigation.goBack()}
+              >
+                <Text style={styles.descfont}> {data.exitButtonText}</Text>
               </AwesomeButton>
             </View>
           </View>
@@ -224,7 +231,7 @@ export class Projects extends Component {
   }
 }
 
-export class Experiences extends Component {
+export class Experiences extends React.Component<Props> {
   state = {
     activeSections: [],
   };
@@ -236,10 +243,10 @@ export class Experiences extends Component {
           style={styles.expandableLogo}
           source={require("../assets/plus.png")}
         />
-        <Text style={[{ fontSize: 20 }, styles.subtitlefont]}>
+        <Text style={[{ fontSize: 24 }, styles.subtitlefont]}>
           {section.name}
         </Text>
-        <Text style={[{ fontSize: 18 }, styles.descfont]}>{section.date}</Text>
+        <Text style={[styles.descfont]}>{section.date}</Text>
       </View>
     );
   };
@@ -284,8 +291,12 @@ export class Experiences extends Component {
               touchableComponent={TouchableOpacity}
             />
             <View style={{ alignItems: "center" }}>
-              <AwesomeButton onPress={() => this.props.navigation.goBack()}>
-                <Text> {data.exitButtonText}</Text>
+              <AwesomeButton
+                backgroundColor={data.theme.exitButton}
+                stretch={true}
+                onPress={() => this.props.navigation.goBack()}
+              >
+                <Text style={styles.descfont}> {data.exitButtonText}</Text>
               </AwesomeButton>
             </View>
           </View>
@@ -294,11 +305,10 @@ export class Experiences extends Component {
     );
   }
 }
-export class Interests extends Component {
+export class Interests extends React.Component<Props> {
   state = {
     activeSections: [],
   };
-
   _renderHeader = (section: any) => {
     return (
       <View style={styles.textContainer}>
@@ -314,7 +324,6 @@ export class Interests extends Component {
       </View>
     );
   };
-
   _renderContent = (section: any) => {
     return (
       <View>
@@ -346,11 +355,13 @@ export class Interests extends Component {
             onChange={this._updateSections}
             touchableComponent={TouchableOpacity}
           />
-          {/* //https://github.com/HenryJKang/Night_LightV2
-      //https://github.com/HenryJKang/Allegro */}
           <View style={{ alignItems: "center" }}>
-            <AwesomeButton onPress={() => this.props.navigation.goBack()}>
-              <Text> {data.exitButtonText}</Text>
+            <AwesomeButton
+              backgroundColor={data.theme.exitButton}
+              stretch={true}
+              onPress={() => this.props.navigation.goBack()}
+            >
+              <Text style={styles.descfont}> {data.exitButtonText}</Text>
             </AwesomeButton>
           </View>
         </View>

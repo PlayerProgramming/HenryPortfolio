@@ -13,7 +13,6 @@ import * as data from "./data";
 import Loading from "./Loading";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./Style";
-// import { useFonts, Teko_300Light } from "@expo-google-fonts/dev";
 import {
   useFonts,
   Teko_700Bold,

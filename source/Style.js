@@ -71,27 +71,17 @@ export default StyleSheet.create({
   },
   background: {
     position: "absolute",
+    height: "100%",
+
     flex: 1,
     left: 0,
     right: 0,
     top: 0,
-    // height: Platform.OS === "android" ? "120%" : "100%",
-    ...Platform.select({
-      ios: {
-        height: 1000,
-      },
-      android: {
-        height: 1400,
-      },
-      default: {
-        height: "100%",
-      },
-    }),
   },
   //-------------------------------------------------------
   contentsTitle: {
     alignItems: "center",
-    marginVertical: Platform.OS === "android" ? 60 : 10,
+    marginVertical: Platform.OS === "android" ? 10 : 10,
   },
   contentsTitleText: {
     fontSize: 60,
@@ -135,21 +125,23 @@ export default StyleSheet.create({
 
   background: {
     position: "absolute",
-    flex: 1,
     left: 0,
     right: 0,
     top: 0,
-    margin: -20,
-    ...Platform.select({
-      ios: {
-        height: 1000,
-      },
-      android: {
-        height: 1400,
-      },
-      default: {
-        height: "100%",
-      },
-    }),
+    height: Platform.OS === "web" ? "100%" : "120%",
+  },
+  //----------------------------------
+  footerbodyList: {
+    width: "100%",
+    height: 30,
+    flex: 1,
+    alignItems: "center",
+  },
+  images: {
+    width: undefined,
+    height: undefined,
+    aspectRatio: 1,
+    resizeMode: "contain",
+    flex: 1,
   },
 });
