@@ -92,7 +92,7 @@ export function Skills() {
         >
           <View style={styles.skillsContainer}>
             <Text style={[styles.subtitlefont, styles.skillstitle]}>
-              Front-end Languages
+              Front-end Development
             </Text>
             {data.felanguage &&
               data.felanguage.map((item: any) => (
@@ -104,7 +104,7 @@ export function Skills() {
 
           <View style={styles.skillsContainer}>
             <Text style={[styles.subtitlefont, styles.skillstitle]}>
-              Back-end Languages
+              Back-end Development
             </Text>
             {data.belanguage &&
               data.belanguage.map((item: any) => (

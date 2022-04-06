@@ -28,6 +28,9 @@ export const felanguage: Array<any> = [
   {
     name: "React Native",
   },
+  {
+    name: "JSON",
+  },
 ];
 export const belanguage: Array<any> = [
   {
@@ -48,6 +51,9 @@ export const belanguage: Array<any> = [
   {
     name: "TypeScript",
   },
+  {
+    name: "JSON",
+  },
 ];
 export const gameDevelopment: Array<any> = [
   {
@@ -63,6 +69,9 @@ export const mobileDevelopment: Array<any> = [
   },
   {
     name: "Android Studio",
+  },
+  {
+    name: "React Native",
   },
 ];
 export const exitButtonText = "Run away";
@@ -96,21 +105,22 @@ export const projectContents = [
     content:
       "- Applied Agile in a group of 4, developed and delivered a game " +
       "web application using JavaScript, Firebase,and MongoDB to host the web \n\n" +
-      "- Responsible for designing user pages, implementing a front-end" +
+      "- Responsible for designing user pages, implementing a front-end\n" +
       "Organize and led the team to confirm if the progresses are completed in a sufficient time",
   },
   {
     title: "Lotto Random Number Generator",
-    subtitle: "[ Toy Project ]",
+    subtitle: "[ Personal Project ]",
     checkout: "https://github.com/PlayerProgramming/Lotto-RNG",
     content:
-      "Created a simple mobile + web apps using Expo CLI to display random 6 numbers for LottoMax",
+      "Built a simple mobile + web app using React Native on Expo CLI to display random 6 numbers using small logics for LottoMax",
   },
   {
-    title: "Portfolio",
-    subtitle: "[The one you are looking at]",
+    title: "Henry Portfolio",
+    subtitle: "[ Personal Project ]",
     checkout: "https://github.com/PlayerProgramming/HenryPortfolio",
-    content: "- Made it for my basic introductions using a bit of typescript",
+    content:
+      "- The one you are looking at\n- Built a simple front-end self-introduction mobile and web app to display my introductions in React Native Using Expo CLI with TypeScrip and ES6 features",
   },
 ];
 
@@ -141,7 +151,7 @@ export const experienceContents = [
     date: "2020 May ~ 2020 August",
     details:
       "White Rock, BC\n " +
-      "- Tutored JavaScript and Java for students, ages 8 - 15",
+      "- Instructed Object-Oriented Programming languages such as Java, and JavaScript to students, aged 8 to 15",
   },
   {
     name: "British Columbia Institute of Technology",
