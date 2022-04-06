@@ -2,7 +2,7 @@
 
 ## Introduction
 It's a small React Native portfolio app for introducing myself:sunglasses: using Expo CLI on iOS, Android and even Web version!  
-( Did not optimized for the Web version since the main focus of this project was mobile platforms ) 
+( Web version didn't optimized since the main focus of this project was mobile platforms ) 
     
       
 ## How to check the app out
