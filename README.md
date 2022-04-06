@@ -1,7 +1,7 @@
 # Henry Portfolio
 
 ## Introduction
-It's a small React Native portfolio app for introducing myself:sunglasses: using Expo CLI on iOS, Android and even Web version!  
+It's a small React Native portfolio app for introducing myself:sunglasses: using React Native on Expo CLI for mobile apps and even web app!  
 ( Web version didn't optimized since the main focus of this project was mobile platforms ) 
     
       
