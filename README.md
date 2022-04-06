@@ -2,7 +2,7 @@
 
 ## Introduction
 It's a small React Native portfolio app for introducing myself:sunglasses: using React Native with TypeScript on Expo CLI for mobile apps and even web app!  
-( Web version didn't optimized since the main focus of this project was mobile platforms ) 
+( Web version isn't optimized well since the main focus of this project was mobile platforms ) 
     
       
 ## How to check the app out
