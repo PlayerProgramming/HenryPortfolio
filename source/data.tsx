@@ -51,9 +51,6 @@ export const belanguage: Array<any> = [
   {
     name: "TypeScript",
   },
-  {
-    name: "JSON",
-  },
 ];
 export const gameDevelopment: Array<any> = [
   {
