@@ -1185,7 +1185,7 @@
     getenv "^1.0.0"
     jimp-compact "0.16.1"
     mime "^2.4.4"
-    node-fetch "^2.6.0"
+    node-fetch "^2.6.7"
     parse-png "^2.1.0"
     resolve-from "^5.0.0"
     semver "7.3.2"
@@ -1423,7 +1423,7 @@
     chalk "^3.0.0"
     lodash "^4.17.15"
     mime "^2.4.1"
-    node-fetch "^2.6.0"
+    node-fetch "^2.6.7"
     open "^6.2.0"
     shell-quote "1.6.1"
 
