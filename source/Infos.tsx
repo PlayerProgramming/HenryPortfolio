@@ -49,27 +49,18 @@ export function Bio() {
       </View>
       <View style={styles.container}>
         <View style={styles.textContainer}>
-          <Text
-            style={[
-              styles.descfont,
-              { fontSize: Platform.OS === "web" ? 38 : 20 },
-            ]}
-          >
-            {data.bioContents.content}
-          </Text>
+          <Text style={[styles.descfont, {}]}>{data.bioContents.content}</Text>
         </View>
         <View style={{ alignItems: "center" }}>
           <Text>TMI</Text>
         </View>
         <View style={styles.textContainer}>
-          <Text
-            style={[
-              styles.descfont,
-              { margin: 10, fontSize: Platform.OS === "web" ? 30 : 20 },
-            ]}
-          >
+          <Text style={[styles.descfont, ,]}>
             <Image
-              style={{ width: 35, height: 35 }}
+              style={{
+                width: Platform.OS === "web" ? 50 : 30,
+                height: Platform.OS === "web" ? 50 : 30,
+              }}
               source={require("../assets/etgcharacter1.png")}
             />
             {data.bioContents.tmi}
@@ -169,7 +160,9 @@ export class Projects extends React.Component<Props> {
         <Text
           style={[
             styles.subtitlefont,
-            { alignSelf: "center", fontSize: Platform.OS === "web" ? 66 : 32 },
+            {
+              alignSelf: "center",
+            },
           ]}
         >
           {section.title}
@@ -333,9 +326,7 @@ export class Interests extends React.Component<Props> {
           style={styles.expandableLogo}
           source={require("../assets/plus.png")}
         />
-        <Text
-          style={[styles.subtitlefont, { fontSize: 72, textAlign: "center" }]}
-        >
+        <Text style={[styles.subtitlefont, { textAlign: "center" }]}>
           {section.title}
         </Text>
       </View>

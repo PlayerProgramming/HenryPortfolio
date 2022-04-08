@@ -6,9 +6,9 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
-  Platform,
   TouchableWithoutFeedback,
   Linking,
+  StyleSheet,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Contactinfo from "./Contactinfo";
@@ -42,8 +42,7 @@ export default function Mainpage() {
         />
         <View style={styles.headerContainer}>
           <View style={styles.headerImageContainer}>
-            <TouchableOpacity
-              style={[styles.headerImage]}
+            <TouchableWithoutFeedback
               onPress={() =>
                 Linking.openURL(
                   "https://www.youtube.com/watch?v=hwZNL7QVJjE&ab_channel=SoulfulSounds"
@@ -51,12 +50,12 @@ export default function Mainpage() {
               }
             >
               <Image
-                style={[styles.headerImage]}
+                style={styles.headerImage}
                 source={require("../assets/etgcharacter1.png")}
               />
-            </TouchableOpacity>
+            </TouchableWithoutFeedback>
           </View>
-          <Text style={[styles.titlefont, {}]}>
+          <Text style={[styles.maintitlefont, {}]}>
             Hi, {"\n"}I'm Henry, {"\n"}the Fun Developer.{" "}
           </Text>
         </View>
@@ -72,13 +71,7 @@ export default function Mainpage() {
                 style={styles.bodyList}
                 onPress={() => navigation.navigate(item.id)}
               >
-                <Image
-                  source={item.image}
-                  style={[
-                    { width: 100, height: 100, borderRadius: 20 },
-                    styles.bodyImage,
-                  ]}
-                />
+                <Image source={item.image} style={styles.bodyImage} />
                 <Text style={[{ fontSize: 16 }, styles.descfont]}>
                   {item.title}
                 </Text>

@@ -6,19 +6,24 @@ export default StyleSheet.create({
     margin: 15,
     justifyContent: "center",
   },
+  maintitlefont: {
+    fontFamily: data.theme.titlefont,
+    color: data.fontColor,
+    fontSize: Platform.OS === "web" ? "3.4vmax" : 30,
+  },
   titlefont: {
     fontFamily: data.theme.titlefont,
     color: data.fontColor,
-    fontSize: Platform.OS === "web" ? 80 : 30,
+    fontSize: Platform.OS === "web" ? "4.5vmax" : 30,
   },
   subtitlefont: {
     fontFamily: data.theme.subtitlefont,
     color: data.fontColor,
-    fontSize: Platform.OS === "web" ? 44 : 32,
+    fontSize: Platform.OS === "web" ? "3.9vmin" : 32,
   },
   descfont: {
     fontFamily: data.theme.descfont,
-    fontSize: Platform.OS === "web" ? 40 : 20,
+    fontSize: Platform.OS === "web" ? "3vh" : 20,
 
     color: data.fontColor,
   },
@@ -29,15 +34,13 @@ export default StyleSheet.create({
     borderRadius: 20,
     borderWidth: 0.2,
     alignItems: "center",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
   },
   headerImage: {
-    width: Platform.OS === "web" ? "80%" : "100%",
-    height: Platform.OS === "web" ? 200 : undefined,
+    width: Platform.OS === "web" ? "90%" : "100%",
+    height: Platform.OS === "web" ? 150 : null,
     flex: 1,
     resizeMode: "contain",
-    margin: 10,
-    borderRadius: 12,
   },
   headerImageContainer: {
     flex: 0.4,
@@ -61,7 +64,6 @@ export default StyleSheet.create({
   },
   bodyImage: {
     width: undefined,
-    height: undefined,
     aspectRatio: 1,
     resizeMode: "contain",
     flex: 1,
@@ -114,7 +116,6 @@ export default StyleSheet.create({
   },
   skillstitle: {
     marginBottom: 20,
-    fontSize: Platform.OS === "web" ? 50 : 20,
     fontStyle: "italic",
     fontWeight: "bold",
     textAlign: "center",
