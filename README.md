@@ -20,7 +20,7 @@ Small React Native portfolio app for introducing myself:sunglasses: using React 
 ### 1. Using the website for web app
 1. Go to https://henryportfolio.vercel.app/
 
-### 2. Using Expo Go app
+### 2. Using Expo Go mobile app
 #### (Due to iOS policy, **only Android is available** using the link)
 1. Go to "https://expo.dev/@playerprogramming/HenryPortfolio?serviceType=classic&distribution=expo-go"
 2. Scan the QR code on the page using the 'camera app' or 'Expo app' and it would be ready to go.  
