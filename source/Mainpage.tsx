@@ -6,6 +6,9 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
+  Platform,
+  TouchableWithoutFeedback,
+  Linking,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Contactinfo from "./Contactinfo";
@@ -15,16 +18,18 @@ import { useNavigation } from "@react-navigation/native";
 import styles from "./Style";
 import {
   useFonts,
-  Teko_700Bold,
   Teko_400Regular,
+  Teko_700Bold,
   Teko_300Light,
 } from "@expo-google-fonts/teko";
+import { Mukta_200ExtraLight } from "@expo-google-fonts/mukta";
 export default function Mainpage() {
   const navigation = useNavigation();
   let [fontsLoaded] = useFonts({
-    Teko_400Regular,
     Teko_700Bold,
+    Teko_400Regular,
     Teko_300Light,
+    Mukta_200ExtraLight,
   });
   if (!fontsLoaded) {
     return <Loading />;
@@ -37,12 +42,21 @@ export default function Mainpage() {
         />
         <View style={styles.headerContainer}>
           <View style={styles.headerImageContainer}>
-            <Image
+            <TouchableOpacity
               style={[styles.headerImage]}
-              source={require("../assets/etgcharacter1.png")}
-            />
+              onPress={() =>
+                Linking.openURL(
+                  "https://www.youtube.com/watch?v=hwZNL7QVJjE&ab_channel=SoulfulSounds"
+                )
+              }
+            >
+              <Image
+                style={[styles.headerImage]}
+                source={require("../assets/etgcharacter1.png")}
+              />
+            </TouchableOpacity>
           </View>
-          <Text style={[styles.titlefont, { fontSize: 30 }]}>
+          <Text style={[styles.titlefont, {}]}>
             Hi, {"\n"}I'm Henry, {"\n"}the Fun Developer.{" "}
           </Text>
         </View>

@@ -9,14 +9,17 @@ export default StyleSheet.create({
   titlefont: {
     fontFamily: data.theme.titlefont,
     color: data.fontColor,
+    fontSize: Platform.OS === "web" ? 80 : 30,
   },
   subtitlefont: {
     fontFamily: data.theme.subtitlefont,
     color: data.fontColor,
+    fontSize: Platform.OS === "web" ? 44 : 32,
   },
   descfont: {
     fontFamily: data.theme.descfont,
-    fontSize: 26,
+    fontSize: Platform.OS === "web" ? 40 : 20,
+
     color: data.fontColor,
   },
   headerContainer: {
@@ -48,7 +51,8 @@ export default StyleSheet.create({
     margin: 5,
     marginVertical: 30,
     width: "100%",
-    height: 100,
+    height: Platform.OS === "web" ? 150 : 100,
+
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 0.2,
@@ -110,7 +114,7 @@ export default StyleSheet.create({
   },
   skillstitle: {
     marginBottom: 20,
-    fontSize: 24,
+    fontSize: Platform.OS === "web" ? 50 : 20,
     fontStyle: "italic",
     fontWeight: "bold",
     textAlign: "center",

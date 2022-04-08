@@ -3,10 +3,10 @@ export const theme: any = {
   gradient: ["#feac5e", "#c779d0", "#4bc0c8"],
   textContents: "#859398",
   gradientContents: ["#e7d7be", "#e7d7be"],
-  descfont: "Teko_300Light",
+  descfont: "Mukta_200ExtraLight",
   subtitlefont: "Teko_400Regular",
   titlefont: "Teko_700Bold",
-  exitButton: "#ee9ca7",
+  exitButton: "#F2EFDE",
 };
 export const fontColor = undefined;
 export const felanguage: Array<any> = [
@@ -76,7 +76,7 @@ export const bioContents = {
   content:
     "An energetic and friendly front-end developer, exprienced in React" +
     "Native, but willing to expand to be a Full-Stack developer." +
-    "\nMotivated and driven for a passion to learn new languages, and" +
+    "\n\nMotivated and driven for a passion to learn new languages, and " +
     "always seeking opportunities to grow and contribute to the company's " +
     "goals and needs.",
   tmi: " Nickname 'PlayerOne', because writing codes like a game.",
@@ -206,7 +206,7 @@ export const info: Array<any> = [
   },
   {
     id: "Interests",
-    title: "Interests",
+    title: "\bInterests",
     image: require("../assets/Interests.png"),
   },
 ];

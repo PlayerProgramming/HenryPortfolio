@@ -1075,6 +1075,11 @@
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/dev/-/dev-0.2.2.tgz#aa7dfc9b0222b4a067944ee3b43b260ed160b28e"
   integrity sha512-tgn5zhmgUs/d6+YsxJZ3JeGYOiaSXSFpH3COxTF8JLkg6aD/ERVIUf8hhVD9hv0CVAaTuNt+8m7MvIxFWXcq2g==
 
+"@expo-google-fonts/mukta@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/mukta/-/mukta-0.2.2.tgz#eaa2b6dc3ee76bc7467e295c62277cacec0fe76f"
+  integrity sha512-lQlli1ME1XvFmJdvAudJHSiowLQ0oz0KTArEonZvQznUFWJxw9qjuMrDt0YgMOjDECMNdSc50mKNX1JLtPckfQ==
+
 "@expo-google-fonts/teko@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/teko/-/teko-0.2.2.tgz#ce486b417d067b0524c84dd296bd29fa9051d03b"

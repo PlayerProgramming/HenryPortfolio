@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Linking,
   ScrollView,
+  Platform,
 } from "react-native";
 import React from "react";
 import Accordion from "react-native-collapsible/Accordion";
@@ -24,8 +25,9 @@ function exitButton() {
     <View style={{ alignItems: "center" }}>
       <AwesomeButton
         backgroundColor={data.theme.exitButton}
-        raiseLevel={4}
-        stretch={true}
+        raiseLevel={8}
+        height={70}
+        width={Platform.OS === "web" ? 300 : 100}
         onPress={() => navigation.goBack()}
       >
         <Text style={styles.descfont}> {data.exitButtonText}</Text>
@@ -43,11 +45,16 @@ export function Bio() {
         end={{ x: 1, y: 1 }}
       />
       <View style={styles.contentsTitle}>
-        <Text style={[styles.titlefont, { fontSize: 60 }]}>Biography</Text>
+        <Text style={[styles.titlefont]}>Biography</Text>
       </View>
       <View style={styles.container}>
         <View style={styles.textContainer}>
-          <Text style={[styles.descfont, { fontSize: 28 }]}>
+          <Text
+            style={[
+              styles.descfont,
+              { fontSize: Platform.OS === "web" ? 38 : 20 },
+            ]}
+          >
             {data.bioContents.content}
           </Text>
         </View>
@@ -55,7 +62,12 @@ export function Bio() {
           <Text>TMI</Text>
         </View>
         <View style={styles.textContainer}>
-          <Text style={[styles.descfont, { margin: 10, fontSize: 20 }]}>
+          <Text
+            style={[
+              styles.descfont,
+              { margin: 10, fontSize: Platform.OS === "web" ? 30 : 20 },
+            ]}
+          >
             <Image
               style={{ width: 35, height: 35 }}
               source={require("../assets/etgcharacter1.png")}
@@ -79,7 +91,7 @@ export function Skills() {
         end={{ x: 1, y: 1 }}
       />
       <View style={styles.contentsTitle}>
-        <Text style={[styles.titlefont, { fontSize: 60 }]}>Skills</Text>
+        <Text style={[styles.titlefont, {}]}>Skills</Text>
       </View>
       <View style={[styles.container]}>
         <View
@@ -155,7 +167,10 @@ export class Projects extends React.Component<Props> {
           source={require("../assets/plus.png")}
         />
         <Text
-          style={[styles.subtitlefont, { alignSelf: "center", fontSize: 32 }]}
+          style={[
+            styles.subtitlefont,
+            { alignSelf: "center", fontSize: Platform.OS === "web" ? 66 : 32 },
+          ]}
         >
           {section.title}
         </Text>
@@ -175,15 +190,17 @@ export class Projects extends React.Component<Props> {
           <AwesomeButtonSocial
             backgroundColor="#333"
             raiseLevel={4}
-            height={30}
-            stretch={true}
+            height={45}
+            width={Platform.OS === "web" ? 250 : 130}
             onPress={() => Linking.openURL(section.checkout)}
           >
             <Image
               style={{ width: 25, height: 25 }}
               source={require("../assets/github.png")}
             />
-            <Text style={styles.subtitlefont}>Check Out!</Text>
+            <Text style={[styles.descfont, { color: "#b5b8c7" }]}>
+              Check Out!
+            </Text>
           </AwesomeButtonSocial>
         </View>
       </View>
@@ -203,7 +220,7 @@ export class Projects extends React.Component<Props> {
         />
         <ScrollView style={{ flex: 1 }}>
           <View style={styles.contentsTitle}>
-            <Text style={[styles.titlefont, { fontSize: 60 }]}> Projects</Text>
+            <Text style={[styles.titlefont]}> Projects</Text>
           </View>
           <View style={[styles.container]}>
             <Accordion
@@ -218,7 +235,9 @@ export class Projects extends React.Component<Props> {
             <View style={{ alignItems: "center" }}>
               <AwesomeButton
                 backgroundColor={data.theme.exitButton}
-                stretch={true}
+                raiseLevel={8}
+                height={70}
+                width={Platform.OS === "web" ? 300 : 100}
                 onPress={() => this.props.navigation.goBack()}
               >
                 <Text style={styles.descfont}> {data.exitButtonText}</Text>
@@ -243,9 +262,7 @@ export class Experiences extends React.Component<Props> {
           style={styles.expandableLogo}
           source={require("../assets/plus.png")}
         />
-        <Text style={[{ fontSize: 24 }, styles.subtitlefont]}>
-          {section.name}
-        </Text>
+        <Text style={[styles.subtitlefont]}>{section.name}</Text>
         <Text style={[styles.descfont]}>{section.date}</Text>
       </View>
     );
@@ -277,9 +294,7 @@ export class Experiences extends React.Component<Props> {
         />
         <ScrollView>
           <View style={styles.contentsTitle}>
-            <Text style={[styles.titlefont, { fontSize: 60 }]}>
-              Experiences
-            </Text>
+            <Text style={[styles.titlefont]}>Experiences</Text>
           </View>
           <View style={styles.container}>
             <Accordion
@@ -293,7 +308,9 @@ export class Experiences extends React.Component<Props> {
             <View style={{ alignItems: "center" }}>
               <AwesomeButton
                 backgroundColor={data.theme.exitButton}
-                stretch={true}
+                raiseLevel={8}
+                height={70}
+                width={Platform.OS === "web" ? 300 : 100}
                 onPress={() => this.props.navigation.goBack()}
               >
                 <Text style={styles.descfont}> {data.exitButtonText}</Text>
@@ -317,7 +334,7 @@ export class Interests extends React.Component<Props> {
           source={require("../assets/plus.png")}
         />
         <Text
-          style={[styles.subtitlefont, { fontSize: 60, textAlign: "center" }]}
+          style={[styles.subtitlefont, { fontSize: 72, textAlign: "center" }]}
         >
           {section.title}
         </Text>
@@ -358,7 +375,9 @@ export class Interests extends React.Component<Props> {
           <View style={{ alignItems: "center" }}>
             <AwesomeButton
               backgroundColor={data.theme.exitButton}
-              stretch={true}
+              raiseLevel={8}
+              height={70}
+              width={Platform.OS === "web" ? 300 : 100}
               onPress={() => this.props.navigation.goBack()}
             >
               <Text style={styles.descfont}> {data.exitButtonText}</Text>
