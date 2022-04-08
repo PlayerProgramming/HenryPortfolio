@@ -154,7 +154,7 @@ export class Projects extends React.Component<Props> {
     return (
       <View style={styles.textContainer}>
         <Image
-          style={styles.expandableLogo}
+          style={styles.expandableLogo as any}
           source={require("../assets/plus.png")}
         />
         <Text
@@ -252,7 +252,7 @@ export class Experiences extends React.Component<Props> {
     return (
       <View style={styles.textContainer}>
         <Image
-          style={styles.expandableLogo}
+          style={styles.expandableLogo as any}
           source={require("../assets/plus.png")}
         />
         <Text style={[styles.subtitlefont]}>{section.name}</Text>
@@ -323,7 +323,7 @@ export class Interests extends React.Component<Props> {
     return (
       <View style={styles.textContainer}>
         <Image
-          style={styles.expandableLogo}
+          style={styles.expandableLogo as any}
           source={require("../assets/plus.png")}
         />
         <Text style={[styles.subtitlefont, { textAlign: "center" }]}>

@@ -23,7 +23,7 @@ export default StyleSheet.create({
   },
   descfont: {
     fontFamily: data.theme.descfont,
-    fontSize: Platform.OS === "web" ? "3vh" : 20,
+    fontSize: Platform.OS === "web" ? "3vmin" : 20,
 
     color: data.fontColor,
   },
