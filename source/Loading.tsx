@@ -5,6 +5,7 @@ export default function Loading() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Loading...</Text>
+      <Text>Please Wait...</Text>
     </SafeAreaView>
   );
 }
