@@ -50,7 +50,7 @@ export default function Mainpage() {
               }
             >
               <Image
-                style={styles.headerImage}
+                style={styles.headerImage as any}
                 source={require("../assets/etgcharacter1.png")}
               />
             </TouchableWithoutFeedback>
@@ -71,7 +71,7 @@ export default function Mainpage() {
                 style={styles.bodyList}
                 onPress={() => navigation.navigate(item.id)}
               >
-                <Image source={item.image} style={styles.bodyImage} />
+                <Image source={item.image} style={styles.bodyImage as any} />
                 <Text style={[{ fontSize: 16 }, styles.descfont]}>
                   {item.title}
                 </Text>
