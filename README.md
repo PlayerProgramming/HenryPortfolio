@@ -14,9 +14,9 @@
 ## Introduction
 Small React Native portfolio app for introducing myself:sunglasses: using React Native with TypeScript on Expo CLI for mobile apps and even web app!  
 ( Web version isn't optimized well since the main focus of this project was mobile platforms ) 
-    
       
 ## How to check the app out
+
 ### 1. Using Expo Go app
 #### (Due to iOS policy, **only Android is available** using the link)
 1. Go to "https://expo.dev/@playerprogramming/HenryPortfolio?serviceType=classic&distribution=expo-go"
