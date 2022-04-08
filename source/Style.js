@@ -38,7 +38,7 @@ export default StyleSheet.create({
   },
   headerImage: {
     width: Platform.OS === "web" ? "90%" : "100%",
-    height: Platform.OS === "web" ? 150 : null,
+    height: Platform.OS === "web" ? 150 : undefined,
     flex: 1,
     resizeMode: "contain",
   },
