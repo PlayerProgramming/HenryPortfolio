@@ -54,7 +54,7 @@ export default StyleSheet.create({
     margin: 5,
     marginVertical: 30,
     width: "100%",
-    height: Platform.OS === "web" ? 150 : 100,
+    height: Platform.OS === "web" ? 120 : 100,
 
     justifyContent: "center",
     alignItems: "center",
@@ -66,7 +66,7 @@ export default StyleSheet.create({
     width: undefined,
     aspectRatio: 1,
     resizeMode: "contain",
-    flex: 1,
+    flex: 0.8,
   },
   AndroidSafeArea: {
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
