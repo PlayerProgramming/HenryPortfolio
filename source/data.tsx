@@ -1,6 +1,7 @@
 export const theme: any = {
   contents: "#fffcdc",
-  gradient: ["#feac5e", "#c779d0", "#4bc0c8"],
+  // gradient: ["#feac5e", "#c779d0", "#4bc0c8"],
+  gradient: ["#fffcdc", "#dbd5a4", "#649173"],
   textContents: "#859398",
   gradientContents: ["#e7d7be", "#e7d7be"],
   descfont: "Mukta_200ExtraLight",
