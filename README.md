@@ -11,17 +11,16 @@
 
 # Henry Portfolio
 
-## Introduction
-Small React Native portfolio app for introducing myself:sunglasses: using React Native with TypeScript on Expo CLI for mobile apps and even web app!  
-( Web version isn't optimized well since the main focus of this project was mobile platforms ) 
-      
+## Introduction  
+#### Small React Native portfolio app for introducing myself:sunglasses: using React Native with TypeScript on Expo CLI for mobile apps and even web app!  
+----  
 ## How to check the app out
 
 ### 1. Using the website for web app
 1. Go to https://henryportfolio.vercel.app/
 
 ### 2. Using Expo Go mobile app
-#### (Due to iOS policy, **only Android is available** using the link)
+#### (Due to iOS policy, **only Android is available** using this link)
 1. Go to "https://expo.dev/@playerprogramming/HenryPortfolio?serviceType=classic&distribution=expo-go"
 2. Scan the QR code on the page using the 'camera app' or 'Expo app' and it would be ready to go.  
   
@@ -37,3 +36,6 @@ Small React Native portfolio app for introducing myself:sunglasses: using React 
 
 
 ![henry_portfolio_example](https://user-images.githubusercontent.com/94532638/161726249-bddeda24-a4c4-434f-8008-395d989c8b59.gif)
+
+
+----
