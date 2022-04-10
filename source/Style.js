@@ -9,7 +9,7 @@ export default StyleSheet.create({
   maintitlefont: {
     fontFamily: data.theme.titlefont,
     color: data.fontColor,
-    fontSize: Platform.OS === "web" ? "3.4vmax" : 30,
+    fontSize: Platform.OS === "web" ? "3.2vmin" : 30,
   },
   titlefont: {
     fontFamily: data.theme.titlefont,
