@@ -18,6 +18,7 @@
 
 ### 1. Using the website for web app
 1. Go to https://henryportfolio.vercel.app/
+- Currently There is an error using API on the web app. I will modifiy as soon as possible.
 
 ### 2. Using Expo Go mobile app
 #### (Due to iOS policy, **only Android is available** using this link)
