@@ -120,6 +120,13 @@ export const projectContents = [
     content:
       "- The one you are looking at\n- Built a simple front-end self-introduction mobile and web app to display my introductions in React Native Using Expo CLI with TypeScrip and ES6 features",
   },
+  {
+    title: "OMDB - Find Movies",
+    subtitle: "[ Personal Project ]",
+    checkout: "https://github.com/PlayerProgramming/OMDB-FindMovies",
+    content:
+      "Built a moive search mobile application for iOS and Android using React Native with TypeScript and OMDB API.",
+  },
 ];
 
 export const interestContents = [
