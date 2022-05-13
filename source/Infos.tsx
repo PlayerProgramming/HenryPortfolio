@@ -177,7 +177,7 @@ export class Projects extends React.Component<Props> {
   };
   _renderContent = (section: any) => {
     return (
-      <View>
+      <View style={{ backgroundColor: "#e1d9d1" }}>
         <Text style={styles.descfont}>{section.content}</Text>
         <View style={{ alignItems: "center", margin: 10 }}>
           <AwesomeButtonSocial

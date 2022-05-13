@@ -127,6 +127,13 @@ export const projectContents = [
     content:
       "Built a moive search mobile application for iOS and Android using React Native with TypeScript and OMDB API.",
   },
+  {
+    title: "Wordle Answer",
+    subtitle: "[ Personal Project ]",
+    checkout: "https://github.com/PlayerProgramming/Wordle-Answer",
+    content:
+      "Built a website which provides Wordle, a five letter word guessing game, answers using React and an online textfile contains five letters only with complex logics.",
+  },
 ];
 
 export const interestContents = [
